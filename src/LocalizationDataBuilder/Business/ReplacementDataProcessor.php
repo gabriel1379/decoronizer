@@ -2,7 +2,7 @@
 
 namespace LocalizationDataBuilder\Business;
 
-use LocalizationDataBuilder\Communication\PageRenderer;
+use LocalizationDataBuilder\Communication\Output;
 use LocalizationDataBuilder\Config\Config;
 use LocalizationDataBuilder\Persistence\FileHandlerInterface;
 use LocalizationDataBuilder\Shared\ReplacementDataTransfer;
@@ -20,19 +20,19 @@ class ReplacementDataProcessor implements ReplacementDataProcessorInterface
     protected $fileHandler;
 
     /**
-     * @var \LocalizationDataBuilder\Communication\PageRenderer
+     * @var \LocalizationDataBuilder\Communication\Output
      */
     protected $pageRenderer;
 
     /**
      * @param \LocalizationDataBuilder\Config\Config $config
      * @param \LocalizationDataBuilder\Persistence\FileHandlerInterface $fileHandler
-     * @param \LocalizationDataBuilder\Communication\PageRenderer $pageRenderer
+     * @param \LocalizationDataBuilder\Communication\Output $pageRenderer
      */
     public function __construct(
         Config $config,
         FileHandlerInterface $fileHandler,
-        PageRenderer $pageRenderer
+        Output $pageRenderer
     ) {
         $this->config = $config;
         $this->fileHandler = $fileHandler;
@@ -74,6 +74,8 @@ class ReplacementDataProcessor implements ReplacementDataProcessorInterface
         }
 
         $this->addCorrelations($replacementDataTransfer);
+
+        $this->pageRenderer->renderSeparatorLine();
 
         return $replacementDataTransfer;
     }

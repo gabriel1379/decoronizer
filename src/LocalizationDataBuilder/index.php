@@ -22,7 +22,7 @@ require_once('Business\ReplacementDataProcessorInterface.php');
 require_once('Business\ReplacementDataProcessor.php');
 
 require_once('Communication\LocalizationDataBuilderCommunicationFactory.php');
-require_once('Communication\PageRenderer.php');
+require_once('Communication\Output.php');
 
 require_once('Persistence\FileHandlerInterface.php');
 require_once('Persistence\FileHandler.php');

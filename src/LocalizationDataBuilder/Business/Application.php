@@ -40,8 +40,6 @@ class Application
         $replacementDataTransfer = $replacementDataProcessor
             ->composeReplacementDataForLocales($localeMaster);
 
-        $pageRenderer->renderSeparatorLine();
-
         $messageMasterProcessor = $this
             ->localizationDataBuilderBusinessFactory
             ->createMessageMasterProcessor();

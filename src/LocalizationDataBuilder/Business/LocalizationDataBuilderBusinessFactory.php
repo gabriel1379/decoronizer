@@ -8,7 +8,7 @@
 
 namespace LocalizationDataBuilder\Business;
 
-use LocalizationDataBuilder\Communication\PageRenderer;
+use LocalizationDataBuilder\Communication\Output;
 use LocalizationDataBuilder\Config\Config;
 use LocalizationDataBuilder\Persistence\FileHandler;
 use LocalizationDataBuilder\Persistence\FileHandlerInterface;
@@ -21,14 +21,14 @@ class LocalizationDataBuilderBusinessFactory
     protected $config;
 
     /**
-     * @var \LocalizationDataBuilder\Communication\PageRenderer
+     * @var \LocalizationDataBuilder\Communication\Output
      */
     protected $pageRenderer;
 
     /**
-     * @param \LocalizationDataBuilder\Communication\PageRenderer $pageRenderer
+     * @param \LocalizationDataBuilder\Communication\Output $pageRenderer
      */
-    public function providePageRenderer(PageRenderer $pageRenderer): void
+    public function providePageRenderer(Output $pageRenderer): void
     {
         $this->pageRenderer = $pageRenderer;
     }

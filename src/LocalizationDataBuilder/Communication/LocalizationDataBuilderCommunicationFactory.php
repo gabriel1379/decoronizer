@@ -15,11 +15,11 @@ class LocalizationDataBuilderCommunicationFactory
     }
 
     /**
-     * @return \LocalizationDataBuilder\Communication\PageRenderer
+     * @return \LocalizationDataBuilder\Communication\Output
      */
-    public function createPageRenderer(): PageRenderer
+    public function createPageRenderer(): Output
     {
-        return new PageRenderer(
+        return new Output(
             $this->getConfig()
         );
     }

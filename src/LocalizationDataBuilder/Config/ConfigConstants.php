@@ -13,6 +13,7 @@ interface ConfigConstants
     public const LOCALE_CORRELATIONS = 'LOCALE_CORRELATIONS';
     public const DERIVATIVE_TABLE = 'DERIVATIVE_TABLE';
 
+    public const CONSOLE_MODE = 'CONSOLE_MODE';
     public const DRY_RUN = 'DRY_RUN';
     public const VERBOSE_MODE = 'VERBOSE_MODE';
 }

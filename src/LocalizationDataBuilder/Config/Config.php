@@ -95,6 +95,14 @@ class Config
     /**
      * @return bool
      */
+    public function isConsoleMode(): bool
+    {
+        return $this->config[ConfigConstants::CONSOLE_MODE];
+    }
+
+    /**
+     * @return bool
+     */
     public function isDryRun(): bool
     {
         return $this->config[ConfigConstants::DRY_RUN];

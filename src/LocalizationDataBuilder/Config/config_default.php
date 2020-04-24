@@ -7,6 +7,7 @@
     $config[ConfigConstants::FILENAME_MSG_MASTER] = 'message_master.json';
     $config[ConfigConstants::FILENAME_MSG_DESTINATION] = 'messages.json';
 
+    $config[ConfigConstants::CONSOLE_MODE] = true;
     $config[ConfigConstants::DRY_RUN] = false;
     $config[ConfigConstants::VERBOSE_MODE] = true;
 

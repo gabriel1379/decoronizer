@@ -2,7 +2,7 @@
 
 namespace LocalizationDataBuilder\Business;
 
-use LocalizationDataBuilder\Communication\PageRenderer;
+use LocalizationDataBuilder\Communication\Output;
 use LocalizationDataBuilder\Config\Config;
 use LocalizationDataBuilder\Persistence\FileHandlerInterface;
 use LocalizationDataBuilder\Shared\ReplacementDataTransfer;
@@ -25,7 +25,7 @@ class DataWriter implements DataWriterInterface
     protected $jsonHelper;
 
     /**
-     * @var \LocalizationDataBuilder\Communication\PageRenderer
+     * @var \LocalizationDataBuilder\Communication\Output
      */
     protected $pageRenderer;
 
@@ -33,7 +33,7 @@ class DataWriter implements DataWriterInterface
         Config $config,
         FileHandlerInterface $fileHandler,
         JsonHelperInterface $jsonHelper,
-        PageRenderer $pageRenderer
+        Output $pageRenderer
     ) {
         $this->config = $config;
         $this->fileHandler = $fileHandler;
