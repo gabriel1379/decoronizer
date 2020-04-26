@@ -36,8 +36,8 @@ class LocaleMasterProcessor implements LocaleMasterProcessorInterface
     {
         $localeMaster = $this->loadLocaleMasterData();
         $localeMaster = $this->mapLocaleMasterData($localeMaster);
-        $localeMaster = $this->processLocaleMasterData($localeMaster);
-        $localeMaster = $this->rebuildWithIdKeys($localeMaster);
+        $localeMaster = $this->addColumnHeadersAsKeysToSubArrays($localeMaster);
+        $localeMaster = $this->addLineIdsAsMainArrayKeys($localeMaster);
 
         return $localeMaster;
     }
@@ -72,7 +72,7 @@ class LocaleMasterProcessor implements LocaleMasterProcessorInterface
      *
      * @return array
      */
-    protected function processLocaleMasterData(array $localeMaster): array
+    protected function addColumnHeadersAsKeysToSubArrays(array $localeMaster): array
     {
         array_walk($localeMaster, function(&$a) use ($localeMaster) {
             $a = array_combine($localeMaster[0], $a);
@@ -87,7 +87,7 @@ class LocaleMasterProcessor implements LocaleMasterProcessorInterface
      *
      * @return array
      */
-    protected function rebuildWithIdKeys(array $localeMaster): array
+    protected function addLineIdsAsMainArrayKeys(array $localeMaster): array
     {
         $localeMasterWithIdKeys = [];
 
